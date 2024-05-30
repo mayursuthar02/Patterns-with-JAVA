@@ -143,10 +143,10 @@ public class Pattern1 {
     static void pattern8(int n) {
         for (int row = 1; row <= 2 * n - 1; row++) {
             for (int col = 1; col <= 2 * n - 1; col++) {
-                if (row < n) {
+                if (row <= n) {
                     int oneCol = n - row + 1;
                     int secCol = n + row - 1;
-                    if (col == oneCol || col == secCol) {
+                    if (col <= oneCol || col >= secCol) {
                         System.out.print("*");
                     }else {
                         System.out.print(" ");
@@ -154,7 +154,7 @@ public class Pattern1 {
                 } else {
                     int oneCol = row - n + 1;
                     int secCol = 3 * n - row - 1;
-                    if (col == oneCol || col == secCol) {
+                    if (col <= oneCol || col >= secCol) {
                         System.out.print("*");
                     }else {
                         System.out.print(" ");
