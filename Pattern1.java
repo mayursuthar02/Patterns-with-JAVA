@@ -21,7 +21,9 @@ public class Pattern1 {
         // System.out.println();
         // pattern10(n);
         // System.out.println();
-        pattern11(4);
+        // pattern11(4);
+        // System.out.println();
+        pattern12(n);
         System.out.println();
 
     }
@@ -204,6 +206,7 @@ public class Pattern1 {
         }
     }
 
+    // Pattern 10
     static void pattern10(int n) {
         char[] printChar = {'E', 'D', 'C', 'B', 'A'};
         for (int i = 0; i < n; i++) {
@@ -214,6 +217,7 @@ public class Pattern1 {
         }
     }
 
+    // Pattern 11
     static void pattern11(int n) {
         for (int i = 0; i < 2*n - 1; i++) {
             for (int j = 0; j < 2*n - 1 ; j++) {
@@ -254,7 +258,27 @@ public class Pattern1 {
         }
     }
 
-
+    // Pattern 12
+    static void pattern12(int n) {
+        for (int i = 0; i < n; i++) {
+            int p = 5;
+            for (int j = 0; j < 2*n - 1 ; j++) {
+                int oneCol = n - i - 1;
+                int secCol = n + i - 1;
+                if (j >= oneCol && j <= secCol) {
+                    System.out.print(p + " ");
+                    if (j < n - 1) {
+                        p--;
+                    } else {
+                        p++;
+                    }
+                } else {
+                    System.out.print("  ");
+                }
+            }
+            System.out.println();
+        }
+    }
 
     
 }
