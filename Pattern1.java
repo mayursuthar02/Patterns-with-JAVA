@@ -1,23 +1,27 @@
 public class Pattern1 {
     public static void main(String[] args) {
         int n = 5;
-        pattern1(n);
-        System.out.println();
-        pattern2(n);
-        System.out.println();
-        pattern3(n);
-        System.out.println();
-        pattern4(n);
-        System.out.println();
-        pattern5(n);
-        System.out.println();
-        pattern6(n);
-        System.out.println();
-        pattern7(n);
-        System.out.println();
-        pattern8(n);
-        System.out.println();
-        pattern9(n);
+        // pattern1(n);
+        // System.out.println();
+        // pattern2(n);
+        // System.out.println();
+        // pattern3(n);
+        // System.out.println();
+        // pattern4(n);
+        // System.out.println();
+        // pattern5(n);
+        // System.out.println();
+        // pattern6(n);
+        // System.out.println();
+        // pattern7(n);
+        // System.out.println();
+        // pattern8(n);
+        // System.out.println();
+        // pattern9(n);
+        // System.out.println();
+        // pattern10(n);
+        // System.out.println();
+        pattern11(4);
         System.out.println();
 
     }
@@ -180,7 +184,6 @@ public class Pattern1 {
         for (int row = 1; row <= 2 * n - 1; row++) {
             for (int col = 1; col <= 2 * n; col++) {
                 if (row <= n) {
-                    int oneCol = row;
                     int secCol = 2*n - row + 1;
                     if (col <= row || col >= secCol) {
                         System.out.print("*");
@@ -200,6 +203,58 @@ public class Pattern1 {
             System.out.println();
         }
     }
+
+    static void pattern10(int n) {
+        char[] printChar = {'E', 'D', 'C', 'B', 'A'};
+        for (int i = 0; i < n; i++) {
+            for (int j = i; j >= 0 ; j--) {
+                System.out.print(printChar[j]);
+            }
+            System.out.println();
+        }
+    }
+
+    static void pattern11(int n) {
+        for (int i = 0; i < 2*n - 1; i++) {
+            for (int j = 0; j < 2*n - 1 ; j++) {
+                if (i < n) {
+                    int firCol = i;
+                    int secCol = 2*n - 2 - i;
+                    if (j >= firCol && j <= secCol) {
+                        System.out.print(4-i + " ");
+                    }   
+                    if (j < n) {
+                        if (j < firCol || j > secCol) {
+                            System.out.print(4-j + " ");
+                        }
+                    } else {
+                        if (j < firCol || j > secCol) {
+                            System.out.print(j - 4 + 2 + " ");
+                        } 
+                    }
+
+                } else {
+                    int firCol = 2*n - i - 2;
+                    int secCol = i;
+                    if (j >= firCol && j <= secCol) {
+                        System.out.print(i - 4 + 2 + " ");
+                    }
+                    if (j < n) {
+                        if (j < firCol || j > secCol) {
+                            System.out.print(4-j + " ");
+                        }
+                    } else {
+                        if (j < firCol || j > secCol) {
+                            System.out.print(j - 4 + 2 + " ");
+                        } 
+                    }
+                }
+            }
+            System.out.println();
+        }
+    }
+
+
 
     
 }
